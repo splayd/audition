@@ -1,8 +1,11 @@
 {
   "name": "audition",
   "version": "0.0.0",
-  "description": "An awesome package",
-  "keywords": [],
+  "description": "Design, prototype, and verify code",
+  "keywords": [
+    "test",
+    "tdd"
+  ],
   "homepage": "https://github.com/splayd/audition",
   "bugs": "https://github.com/splayd/audition/issues",
   "license": "MIT",

@@ -4,7 +4,7 @@
 [![dependencies Status](https://david-dm.org/splayd/audition/status.svg)](https://david-dm.org/splayd/audition)
 [![devDependencies Status](https://david-dm.org/splayd/audition/dev-status.svg)](https://david-dm.org/splayd/audition?type=dev)
 
-An awesome package
+Design, prototype, and verify code
 
 ## Usage
 Install [audition](https://yarnpkg.com/en/package/audition)
