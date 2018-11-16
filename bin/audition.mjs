@@ -24,7 +24,11 @@ async function run() {
   for await (const { file, description, error } of pool) {
     if (error) {
       failed = true
-      console.log(`FAIL ${file} ${description}\n${error}`)
+      if (description) {
+        console.log(`FAIL ${file} ${description}\n${error}`)
+      } else {
+        console.log(`FAIL ${file}\n${error}`)
+      }
     } else {
       console.log(`PASS ${file} ${description}`)
     }
