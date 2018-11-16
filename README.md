@@ -13,3 +13,24 @@ by running:
 ```sh
 yarn add audition
 ```
+
+Write test cases in e.g. `math.test.js`:
+
+```js
+import { example } from 'audition'
+import assert from 'assert'
+
+example('doing math', () => {
+  assert(1 + 1 === 2)
+})
+
+example('doing math incorrectly', () => {
+  assert(1 + 1 === 3)
+})
+```
+
+Execute the test cases:
+
+```sh
+yarn audition math.test.mjs
+```

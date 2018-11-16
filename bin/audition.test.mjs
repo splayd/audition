@@ -8,7 +8,7 @@ const exec = promisify(childProcess.exec)
 
 example('executing test cases', async () => {
   try {
-    await exec('node --experimental-modules --experimental-worker --no-warnings bin/audition.mjs examples/failing.test.mjs')
+    await exec('bin/audition examples/failing.test.mjs')
     throw new Error('Expected failure')
   } catch (error) {
     assert(error.code === 1)

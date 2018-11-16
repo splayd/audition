@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+BIN_DIRECTORY=$(dirname "${BASH_SOURCE[0]}")
+
+node \
+	--experimental-modules \
+	--experimental-worker \
+	--no-warnings \
+	"${BIN_DIRECTORY}/audition.mjs" \
+	"$@"
