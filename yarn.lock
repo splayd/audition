@@ -2563,6 +2563,13 @@ heliograph@^4.1.0:
   dependencies:
     lodash "^4.17.11"
 
+heliograph@^4.2.1:
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/heliograph/-/heliograph-4.2.1.tgz#a13b1bd8db27a910934b923c67ad5f86a9f95518"
+  integrity sha512-V5Cf11RnGuHfsUmN/TMnXz9iaO+pFlp97lsI57E8I+KHQ+pYTr3SM3u91HoazcZHcT+K+X5bY0t7Q7get9+00Q==
+  dependencies:
+    lodash "^4.17.11"
+
 hook-std@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/hook-std/-/hook-std-1.1.0.tgz#7f76b74b6f96d3cd4106afb50a66bdb0af2d2a2d"
@@ -5229,6 +5236,13 @@ setimmediate@~1.0.4:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/setimmediate/-/setimmediate-1.0.5.tgz#290cbb232e306942d7d7ea9b83732ab7856f8285"
   integrity sha1-KQy7Iy4waULX1+qbg3Mqt4VvgoU=
+
+sewn@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/sewn/-/sewn-1.2.0.tgz#eec51a4aaa0f90647f3a59cb6cf87defdea0aade"
+  integrity sha512-/VgKHCW8J2TLecupm8pJLvWAkeuzLzf6aQOWqRa6RQvmBonBdEBUc9V9R1BwBQZk5SIxcp0RIZDSkDiOFPSiWQ==
+  dependencies:
+    heliograph "^4.2.1"
 
 sha@~2.0.1:
   version "2.0.1"

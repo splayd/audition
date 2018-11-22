@@ -2,9 +2,9 @@
 /* @flow */
 import * as path from 'path'
 import { promisify } from 'util'
-import { spawnActorPool } from '../lib/thread'
-import basePath from '../base-path.js'
+import { spawnThreadPool } from 'sewn'
 import globCb from 'glob'
+import basePath from '../base-path.js'
 
 const glob = promisify(globCb)
 
@@ -14,14 +14,15 @@ async function run() {
     testFiles.push(...(await glob(testFileGlob)))
   }
 
-  const pool = spawnActorPool(path.join(basePath, 'lib', 'run', 'worker.mjs'))
+  const threadPool = spawnThreadPool(path.join(basePath, 'lib', 'run', 'worker.mjs'))
+
   for (const file of testFiles) {
-    pool.send({ file })
+    threadPool.send({ file })
   }
-  pool.end()
+  threadPool.end()
 
   let failed = false
-  for await (const { file, description, error } of pool) {
+  for await (const { file, description, error } of threadPool) {
     if (error) {
       failed = true
       if (description) {
