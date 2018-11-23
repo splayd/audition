@@ -22,16 +22,16 @@ async function run() {
   threadPool.end()
 
   let failed = false
-  for await (const { file, description, error } of threadPool) {
+  for await (const { file, description, error, duration } of threadPool) {
     if (error) {
       failed = true
       if (description) {
-        console.log(`FAIL ${file} ${description}\n${error}`)
+        console.log(`FAIL ${file} ${description} (${duration}ms)\n${error}`)
       } else {
         console.log(`FAIL ${file}\n${error}`)
       }
     } else {
-      console.log(`PASS ${file} ${description}`)
+      console.log(`PASS ${file} ${description} (${duration}ms)`)
     }
   }
 

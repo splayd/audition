@@ -9,15 +9,26 @@ export default async function(
   tasks.push({
     description,
     definition: async () => {
+      const startTime = process.hrtime.bigint()
+
       try {
         await definition()
-        return { description }
+        return {
+          description,
+          duration: msSince(startTime)
+        }
       } catch (error) {
         return {
           description,
-          error: formatError(error)
+          error: formatError(error),
+          duration: msSince(startTime)
         }
       }
     }
   })
+}
+
+function msSince(hrtime) {
+  /* $FlowFixMe */
+  return (process.hrtime.bigint() - hrtime) / BigInt(1e6)
 }
