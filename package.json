@@ -17,10 +17,11 @@
   "repository": "splayd/audition",
   "scripts": {
     "prepare": "flow-typed update --skip",
-    "test": "standard -v --fix && flow && bin/audition {bin,lib}/**/*.test.mjs",
+    "test": "standard -v --fix && flow && bin/audition '{bin,lib}/**/*.test.mjs'",
     "release": "semantic-release"
   },
   "dependencies": {
+    "chalk": "^2.4.1",
     "glob": "^7.1.3",
     "heliograph": "^4.1.0",
     "pretty-error": "^2.1.1",

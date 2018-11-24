@@ -8,6 +8,6 @@ const exec = promisify(childProcess.exec)
 
 example('running test cases', async () => {
   const { stdout } = await exec('bin/audition examples/passing.test.mjs')
-  assert(stdout.includes('PASS examples/passing.test.mjs doing math'))
-  assert(stdout.includes('PASS examples/passing.test.mjs doing more math'))
+  assert(stdout.includes(' PASS  examples/passing.test.mjs › doing math'))
+  assert(stdout.includes(' PASS  examples/passing.test.mjs › doing more math'))
 })

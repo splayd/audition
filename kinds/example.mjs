@@ -30,5 +30,5 @@ export default async function(
 
 function msSince(hrtime) {
   /* $FlowFixMe */
-  return (process.hrtime.bigint() - hrtime) / BigInt(1e6)
+  return Number((process.hrtime.bigint() - hrtime) / BigInt(1e6))
 }

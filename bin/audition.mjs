@@ -5,6 +5,7 @@ import { promisify } from 'util'
 import { spawnThreadPool } from 'sewn'
 import globCb from 'glob'
 import basePath from '../base-path.js'
+import { formatResult } from '../lib/format'
 
 const glob = promisify(globCb)
 
@@ -22,17 +23,9 @@ async function run() {
   threadPool.end()
 
   let failed = false
-  for await (const { file, description, error, duration } of threadPool) {
-    if (error) {
-      failed = true
-      if (description) {
-        console.log(`FAIL ${file} ${description} (${duration}ms)\n${error}`)
-      } else {
-        console.log(`FAIL ${file}\n${error}`)
-      }
-    } else {
-      console.log(`PASS ${file} ${description} (${duration}ms)`)
-    }
+  for await (const result of threadPool) {
+    failed = failed || Boolean(result.error)
+    console.log(formatResult(result))
   }
 
   if (failed) {
