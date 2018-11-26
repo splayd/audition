@@ -4,15 +4,10 @@ import { promisify } from 'util'
 import globCb from 'glob'
 import { formatResult } from '../lib/format'
 import { runFiles } from '../lib/run'
-
-const glob = promisify(globCb)
+import { resolveFiles } from '../lib/file'
 
 async function run() {
-  const testFiles = []
-  for (const testFileGlob of process.argv.slice(2)) {
-    testFiles.push(...(await glob(testFileGlob)))
-  }
-
+  const testFiles = await resolveFiles(process.argv.slice(2))
   const results = runFiles(testFiles)
 
   let failed = false
