@@ -1,10 +1,9 @@
 #!/usr/bin/env node
 /* @flow */
 import { promisify } from 'util'
-import { spawnThreadPool } from 'sewn'
 import globCb from 'glob'
 import { formatResult } from '../lib/format'
-import resolvePath from '../resolve-path'
+import { runFiles } from '../lib/run'
 
 const glob = promisify(globCb)
 
@@ -14,15 +13,10 @@ async function run() {
     testFiles.push(...(await glob(testFileGlob)))
   }
 
-  const threadPool = spawnThreadPool(resolvePath('lib', 'run', 'worker.mjs'))
-
-  for (const file of testFiles) {
-    threadPool.send({ file })
-  }
-  threadPool.end()
+  const results = runFiles(testFiles)
 
   let failed = false
-  for await (const result of threadPool) {
+  for await (const result of results) {
     failed = failed || Boolean(result.error)
     console.log(formatResult(result))
   }

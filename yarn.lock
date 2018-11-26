@@ -2556,17 +2556,17 @@ has@^1.0.1, has@^1.0.3:
   dependencies:
     function-bind "^1.1.1"
 
-heliograph@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/heliograph/-/heliograph-4.1.0.tgz#6feb501b01993d8c912ba3c0f50d43f8bff602be"
-  integrity sha512-6e9vsf87xj24+HmcEnUCK8akn1Mys36F+gSwoMGTKbcYJq9fak//8p5697NS52fOiB7SgCmfoH74F3IYdtwiXA==
-  dependencies:
-    lodash "^4.17.11"
-
 heliograph@^4.2.1:
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/heliograph/-/heliograph-4.2.1.tgz#a13b1bd8db27a910934b923c67ad5f86a9f95518"
   integrity sha512-V5Cf11RnGuHfsUmN/TMnXz9iaO+pFlp97lsI57E8I+KHQ+pYTr3SM3u91HoazcZHcT+K+X5bY0t7Q7get9+00Q==
+  dependencies:
+    lodash "^4.17.11"
+
+heliograph@^4.3.1:
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/heliograph/-/heliograph-4.3.1.tgz#960ccdf4914abad0b04c5c133769e145a193c863"
+  integrity sha512-ShusV0KRQi5P2QDEYPnYVwEjBwZ+cxFhLDq7GmNV5C5aYsOFPFEOA5eLE6hgnJRIlT29Y668Eauvm4eRwV7XTw==
   dependencies:
     lodash "^4.17.11"
 
@@ -5153,10 +5153,10 @@ safe-regex@^1.1.0:
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
 
-semantic-release@^15.12.0:
-  version "15.12.0"
-  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-15.12.0.tgz#061f390bbf999ae56ae52a71f0a986659bbe556d"
-  integrity sha512-s8JQ0twxSTat4aIKy8AVPm6gP+2OlkMyyTGeeWFopOXQVa3Bg0LPNjdhsUL90MHvh9aVy9k0/ym4DWmOcGxOMQ==
+semantic-release@^15.12.1:
+  version "15.12.1"
+  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-15.12.1.tgz#48939aaf8fd623769003f6bd76fdb974e24785b7"
+  integrity sha512-HySTv+k3gKHM7/LWluz/2nZbDRI5zZpsOQ+GTVPLVepRMm5SdWzi4L+I7z5wBwN/JNSPHU7UF4CDSFeGYK1/Mg==
   dependencies:
     "@semantic-release/commit-analyzer" "^6.1.0"
     "@semantic-release/error" "^2.2.0"
