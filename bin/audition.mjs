@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 /* @flow */
-import { promisify } from 'util'
-import globCb from 'glob'
 import { formatResult } from '../lib/format'
 import { runFiles } from '../lib/run'
 import { resolveFiles } from '../lib/file'

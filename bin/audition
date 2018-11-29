@@ -1,9 +1,49 @@
-#!/usr/bin/env bash
-BIN_DIRECTORY=$(dirname "${BASH_SOURCE[0]}")
+#!/usr/bin/env node
+/* @flow */
+const path = require('path')
+const argv = require('yargs')
+const foreground = require('foreground-child')
 
-node \
-	--experimental-modules \
-	--experimental-worker \
-	--no-warnings \
-	"${BIN_DIRECTORY}/audition.mjs" \
-	"$@"
+const options = argv
+  .usage('Usage: audition [OPTION]... [GLOB]...')
+  .demandCommand(1, 'Please pass in at least one file or glob')
+  .help('h')
+  .alias('h', 'help')
+  .alias('v', 'version')
+  .option('c', {
+    alias: 'coverage',
+    describe: 'Enable test coverage',
+    type: 'boolean',
+    default: false
+  })
+  .group(['coverage'], 'Coverage')
+  .group(['help', 'version'], 'About')
+  .argv
+
+const experimenalOptions = [
+  '--no-warnings',
+  '--experimental-modules',
+  '--experimental-worker'
+]
+
+if (options.coverage) {
+  foreground(
+    'c8',
+    [
+      'node',
+      ...experimenalOptions,
+      path.join(__dirname, 'audition.mjs'),
+      ...options._
+    ]
+  )
+} else {
+  foreground(
+    'node',
+    [
+      ...experimenalOptions,
+      path.join(__dirname, 'audition.mjs'),
+      ...options._
+    ]
+  )
+}
+
