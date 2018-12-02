@@ -34,3 +34,9 @@ Execute the test cases:
 ```sh
 yarn audition math.test.mjs
 ```
+
+View additional documentation:
+
+```sh
+yarn audition --help
+```

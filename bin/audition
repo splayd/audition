@@ -6,7 +6,8 @@ const foreground = require('foreground-child')
 
 const options = argv
   .usage('Usage: audition [OPTION]... [GLOB]...')
-  .demandCommand(1, 'Please pass in at least one file or glob')
+  .example('audition', 'Run all files ending in .test.mjs')
+  .example('audition lib/**/*.test.mjs', 'Run all the test files matching a glob')
   .help('h')
   .alias('h', 'help')
   .alias('v', 'version')
@@ -26,6 +27,10 @@ const experimenalOptions = [
   '--experimental-worker'
 ]
 
+const fileGlobs = options._.length > 0
+  ? options._
+  : ['**/*.test.mjs']
+
 if (options.coverage) {
   foreground(
     'c8',
@@ -33,7 +38,7 @@ if (options.coverage) {
       'node',
       ...experimenalOptions,
       path.join(__dirname, 'audition.mjs'),
-      ...options._
+      ...fileGlobs
     ]
   )
 } else {
@@ -42,7 +47,7 @@ if (options.coverage) {
     [
       ...experimenalOptions,
       path.join(__dirname, 'audition.mjs'),
-      ...options._
+      ...fileGlobs
     ]
   )
 }
