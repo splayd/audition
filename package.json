@@ -6,15 +6,15 @@
     "test",
     "tdd"
   ],
-  "homepage": "https://github.com/splayd/audition",
-  "bugs": "https://github.com/splayd/audition/issues",
+  "homepage": "https://github.com/vinsonchuong/audition",
+  "bugs": "https://github.com/vinsonchuong/audition/issues",
   "license": "MIT",
   "author": "Vinson Chuong <vinsonchuong@gmail.com>",
   "bin": {
     "audition": "bin/audition",
     "audition.mjs": "bin/audition.mjs"
   },
-  "repository": "splayd/audition",
+  "repository": "vinsonchuong/audition",
   "scripts": {
     "prepare": "flow-typed update --skip",
     "test": "standard -v --fix && flow && bin/audition '{bin,lib}/**/*.test.mjs'",

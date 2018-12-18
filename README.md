@@ -1,8 +1,8 @@
 # audition
 ![npm](https://img.shields.io/npm/v/audition.svg)
-[![Build Status](https://travis-ci.org/splayd/audition.svg?branch=master)](https://travis-ci.org/splayd/audition)
-[![dependencies Status](https://david-dm.org/splayd/audition/status.svg)](https://david-dm.org/splayd/audition)
-[![devDependencies Status](https://david-dm.org/splayd/audition/dev-status.svg)](https://david-dm.org/splayd/audition?type=dev)
+[![Build Status](https://travis-ci.org/vinsonchuong/audition.svg?branch=master)](https://travis-ci.org/vinsonchuong/audition)
+[![dependencies Status](https://david-dm.org/vinsonchuong/audition/status.svg)](https://david-dm.org/vinsonchuong/audition)
+[![devDependencies Status](https://david-dm.org/vinsonchuong/audition/dev-status.svg)](https://david-dm.org/vinsonchuong/audition?type=dev)
 
 Design, prototype, and verify code
 
